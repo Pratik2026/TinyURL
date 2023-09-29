@@ -13,7 +13,7 @@ async function generateShortUrl(req, res) {
     visit_History: [],
   });
 
-  return res.status(200).json({ id: shortId });
+  return res.status(200).json({ tiny_url: `http://localhost:3000/url/${shortId}`, id: shortId, original_url: body.url });
 }
 
 async function handleAnalytics(req, res) {

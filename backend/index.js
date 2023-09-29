@@ -11,13 +11,7 @@ const PORT = 3000;
 //load env variables
 config({path: "./config/config.env"});
 
-connectToMongoDB()
-  .then(() => {
-    console.log("Connected to MongoDB".blue.bold);
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err.message.red.bold);
-  });
+connectToMongoDB();
 
 app.set("view engine", "ejs");
 app.use(express.json()); // to parse the body of the request as JSON
